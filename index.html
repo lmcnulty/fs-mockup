@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		body {
+			background: darkgrey;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0px;
+		}
+		.wrapper {
+			width: 350px;
+			height: 600px;
+			border: 1px solid black;
+			position: relative;
+			margin: 0px;
+			box-sizing: border-box;
+			font-family: roboto, sans-serif;
+			margin: auto;
+			overflow-x: hidden;
+		}
+		nav {
+			padding-top: 40px;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			width: 250px;
+			background: white;
+			border-right: 1px solid black;
+			transform: translate(-500px, 0px);
+			transition: all .5s;
+		}
+		nav li {
+			list-style: none;
+			padding: 10px;
+			border-bottom: 1px solid grey;
+			border-top: 1px solid grey;
+		}
+		nav li + li {
+			border-top: 0px;
+		}
+		nav li:hover {
+			background: whitesmoke;
+		}
+		nav ul {
+			padding: 0px;
+		}
+		#hamburger-label {
+			font-size: 20pt;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: 100;
+		}
+		#hamburger-check {
+			display: none;
+		}
+		#hamburger-check:checked + nav {
+			display: block;
+			transform: translate(0px, 0px);
+		}
+		main {
+			padding: 10px;
+			background: whitesmoke;
+			min-height: 600px;
+			box-sizing: border-box;
+		}
+		main > h2 {
+			text-align: center;
+		}
+		.coupon {
+			list-style: none;
+			border: 1px solid black;
+			padding: 10px;
+			border-radius: 5px;
+			background: white;
+		}
+		main > h2 {
+			font-weight: 200;
+			font-size: 24pt;
+			margin-top: 0px;
+		}
+		main table {
+			width: 100%;
+		}
+		main table td {
+			padding: 5px;
+			border: 1px #ccc;
+		}
+		main table td:first-child {
+			font-weight: bold;
+		}
+		main table tr:nth-child(odd) {
+			background: whitesmoke;
+		}
+		.coupon h3 {
+			text-align: center;
+			margin-top: .5em;
+			margin-bottom: .5em;
+		}
+		.coupons {
+			padding: 0px;
+		}
+		.why {
+			font-size: 70%;
+		}
+		.alert {
+			margin-left: -10px;
+			margin-right: -10px;
+			margin-bottom: -10px;
+			margin-top: 10px;
+			padding: 5px;
+			border-radius-bottom: 5px;
+		}
+		.bad {
+			background: grey;
+			color: white;
+		}
+		.good {
+			background: darkgrey;
+			color: white;
+		}
+		.discount {
+			font-size: 300%;
+			color: #ccc;
+			text-align: center;
+			font-weight: 300;
+		}
+		.coupon > .head {
+			background-size: cover;
+			margin: -10px -10px 10px -10px;
+			padding: 10px;
+			background: grey;
+			color: white;
+		}
+		.coupon + .coupon {
+			margin-top: 1em;
+		}
+		.wheat {
+		}
+		.veggie {
+		}
+		.fish {
+		}
+		.progress {
+			position: absolute;
+			bottom: 0px;
+			text-align: center;
+			left: 0px;
+			right: 0px;
+			padding: 10px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+		<label id="hamburger-label" for="hamburger-check">&#8801;</label>
+		<input type="checkbox" name="hamburger-check" id="hamburger-check"/>
+		<nav>
+		<ul>
+			<li>Coupons</li>
+			<li>Health Data</li>
+			<li>Past Purchases</li>
+		</ul>
+		<div class="progress">
+		You've saved <strong>$32.12</strong> on <strong>12</strong> healthy purchases!
+		</div >
+		</nav>
+		<main>
+		<h2>Your Coupons</h2>
+		<ul class="coupons">
+			<li class="coupon">
+			<div class="head wheat">
+				<span class="why">Because you bought <strong>White Wonderbread</strong>, try</span>
+				<h3>Whole Wheat Wonderbread</h3>
+			</div>
+			<div class="discount">50% off</div>
+			<details>
+				<summary>More</summary>
+				<table>
+				<tr><td>Serving Size: </td><td>	2 slices,</td></tr>
+				<tr><td>Calories: </td><td> 180,</td></tr>
+				<tr><td>Fat: </td><td> 3g,</td></tr>
+				<tr><td>Carbs: </td><td> 32g,</td></tr>
+				<tr><td>Protein: </td><td> 7g</td></tr>
+				</table>
+			</details>
+			<div class="alert bad">Expires <strong>tomorrow</strong></dic>
+			</li>
+
+			<li class="coupon">
+			<div class="head veggie">
+				<h3>Green Beans</h3>
+			</div>
+			<div class="discount">10% off</div>
+			<details>
+				<summary>More</summary>
+				<table>
+				<tr><td>Serving Size: </td><td>	2 slices,</td></tr>
+				<tr><td>Calories: </td><td> 180,</td></tr>
+				<tr><td>Fat: </td><td> 3g,</td></tr>
+				<tr><td>Carbs: </td><td> 32g,</td></tr>
+				<tr><td>Protein: </td><td> 7g</td></tr>
+				</table>
+			</details>
+			<div class="alert good"><strong>New</strong></dic>
+			</li>
+
+			<li class="coupon">
+			<div class="head fish">
+				<span class="why">Because you bought <strong>candy</strong>, try</span>
+				<h3>Anchovies</h3>
+			</div>
+			<div class="discount">10% off</div>
+			<details>
+				<summary>More</summary>
+				<table>
+				<tr><td>Serving Size: </td><td>	2 slices,</td></tr>
+				<tr><td>Calories: </td><td> 180,</td></tr>
+				<tr><td>Fat: </td><td> 3g,</td></tr>
+				<tr><td>Carbs: </td><td> 32g,</td></tr>
+				<tr><td>Protein: </td><td> 7g</td></tr>
+				</table>
+			</details>
+			</li>
+		</ul>
+		</main>
+		</div>
+	</body>
+</html>
